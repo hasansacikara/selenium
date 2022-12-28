@@ -16,5 +16,9 @@ public class Q1 {
      */
 
     static WebDriver driver;
+
+    //webelement i locate etmek
+    //select class ından obje olusturmak
+    //option seçmek
 }
 
