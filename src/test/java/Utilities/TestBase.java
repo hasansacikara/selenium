@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class TestBase {
+
     protected WebDriver driver;
     @Before
     public void setUp(){
@@ -19,6 +20,7 @@ public class TestBase {
     }
     @After
     public void teardown(){
+
         driver.quit();
     }
 }

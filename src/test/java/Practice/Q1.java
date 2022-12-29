@@ -15,6 +15,8 @@ public class Q1 {
     AfterClass ile kapatin
      */
 
+
+
     static WebDriver driver;
 
     //webelement i locate etmek
