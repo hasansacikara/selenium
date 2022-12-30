@@ -57,4 +57,9 @@ public class C01_NewWindow {
         Assert.assertTrue(actualUrl.contains(expectedKelime));
         Thread.sleep(3000);
     }
-}
+
+
+
+    }
+
+
