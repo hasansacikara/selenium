@@ -34,7 +34,7 @@ public class Q02 {
     public void test01() throws InterruptedException {
         driver.get("https://www.trendyol.com/");
         driver.findElement(By.xpath("//a[@class=\"category-header\"]"));
-        driver.findElement(By.linkText("//input[@class=\"vQI670rJ\"]")).getText();
+        driver.findElement(By.name("//input[@class=\"vQI670rJ\"]")).click();
         driver.findElement(By.linkText("//a[@class=\"sub-category-header\"]"));
         driver.findElement(By.name("Elbise")).click();
         driver.findElement(By.xpath("image-overlay-body")).click();

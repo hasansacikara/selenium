@@ -74,5 +74,7 @@ public class C01_handleDropdownMenü {
         int expectedOptionSayisi=28;
         Assert.assertEquals(expectedOptionSayisi,actualOptionSayisi);
         Thread.sleep(5000);
+
+        // drop down varsa select vardır...
     }
 }

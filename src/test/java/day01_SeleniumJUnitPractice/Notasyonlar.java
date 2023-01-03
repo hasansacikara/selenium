@@ -67,4 +67,3 @@ public class Notasyonlar {
 
 
 }
- //https://github.com/hasansacikara/SeleniumJUnitCalisma.gitgit add README.md
