@@ -15,24 +15,6 @@ import java.time.Duration;
 
 public class Q03 {
 
-    //1. Tarayıcıyı başlatın
-    //2. 'http://automationexercise.com' URL'sine gidin
-    //3. Ana sayfanın başarıyla göründüğünü doğrulayın
-    //4. 'Kaydol / Giriş Yap' düğmesine tıklayın
-    //5. 'Yeni Kullanıcı Kaydı!'nı doğrulayın! görünür
-    //6. Adı ve e-posta adresini girin
-    //7. 'Kaydol' düğmesini tıklayın
-    //8. 'HESAP BİLGİLERİNİ GİRİN' ifadesinin göründüğünü doğrulayın
-    //9. Ayrıntıları doldurun: Unvan, Ad, E-posta, Parola, Doğum tarihi
-    //10. 'Bültenimize kaydolun!' onay kutusunu seçin.
-    //11. 'Ortaklarımızdan özel teklifler alın!' onay kutusunu seçin.
-    //12. Ayrıntıları doldurun: Ad, Soyad, Şirket, Adres, Adres2, Ülke, Eyalet, Şehir, Posta Kodu, Cep Numarası
-    //13. 'Hesap Oluştur düğmesini' tıklayın
-    //14. 'HESAP OLUŞTURULDU!' görünür
-    //15. 'Devam Et' düğmesini tıklayın
-    //16. "Kullanıcı adı olarak oturum açıldı" ifadesinin görünür olduğunu doğrulayın
-    //17. 'Hesabı Sil' düğmesini tıklayın
-    //18. 'HESAP SİLİNDİ!' görünür ve 'Devam Et' düğmesini tıklayın
 
     WebDriver driver;
     String https="https://www";
@@ -53,16 +35,34 @@ public class Q03 {
 
     @Test
     public void test01(){
-        // 1 Amozana git
-        driver.get("https://www.amazon.com/");
 
-        // ara
-        driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).click();
+        //1. “http://webdriveruniversity.com/IFrame/index.html” sayfasina gidin
+        driver.get("http://webdriveruniversity.com/IFrame/index.html");
+        //2. “Our Products” butonuna basin
+        driver.findElements(By.xpath("//a[@href='products.html']"));
 
-        driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
 
-        driver.findElement(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal'][1]")).click();
 
+
+        //3. “Cameras product”i tiklayin
+        WebElement cameraButton=driver.findElement(By.id("id=\"camera-img\""));
+        cameraButton.click();
+
+        //4. Popup mesajini yazdirin
+        System.out.println("Please Note: All orders must be over the value of £50, adding additional coupon codes to the basket are excluded from this offer. To receive 30% off please add the following code to the basket");
+        //5. “close” butonuna basin
+        WebElement button= driver.findElement(By.className("//button[@class='btn btn-default']"));
+        button.click();
+
+
+        //6. "WebdriverUniversity.com (IFrame)" linkini tiklayin
+        WebElement linkClick=driver.findElement(By.linkText("//a[@id='nav-title'][1]"));
+        linkClick.click();
+
+
+
+
+        //7. "http://webdriveruniversity.com/index.html" adresine gittigini test edin
 
 
 
