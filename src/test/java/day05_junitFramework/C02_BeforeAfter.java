@@ -50,4 +50,3 @@ public class C02_BeforeAfter {
         Thread.sleep(3000);
     }
 }
-//https://github.com/hasansacikara/selenium.git

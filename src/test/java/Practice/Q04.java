@@ -19,11 +19,19 @@ public class Q04 {
     String https="https://www";
     @Before
     public void setUp(){
+        // Gerekli setup islemlerini kuralim
         WebDriverManager.chromedriver().setup();
         driver= new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
+        driver.get("https://www.automationexercise.com/");
+        // signUp linkine tiklayalim
+        driver.findElement(By.xpath("//a[text()=' Signup / Login']")).click();
+        String expected="https://www.automationexercise.com/login";
+        String actual=driver.getCurrentUrl();
+        String nameBox;
+        String imailBox;
+        Assert.assertEquals(expected,actual);
     }
 
     @After
@@ -35,38 +43,54 @@ public class Q04 {
     @Test
     public void test01(){
         //1. “https://www.saucedemo.com” Adresine gidin
-        driver.get("https://www.saucedemo.com");
-        //2. Username kutusuna “standard_user” yazdirin
-        WebElement userName=driver.findElement(By.className("//input[@name='user-name']"));
-        userName.click();
-        System.out.println(userName);
+        driver.get("https://www.automationexercise.com/Login");
+        // signupa linkine tıklayınız
+        driver.findElement(By.xpath("//a[text()=' Signup / Login']")).click();
+        String expected="https://www.automationexercise.com/Login";
+        String actual=driver.getCurrentUrl();
+        WebElement nameBox= driver.findElement(By.xpath("//input[@name='name']"));
+        WebElement imailBox=driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
+        driver.findElement(By.xpath("//input[@name='name']"));
+        driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
+        nameBox.sendKeys("hasan");
+        imailBox.sendKeys("sacikara@gmail.com");
+        driver.findElement(By.xpath("//button[@data-qa='signup-button']")).click();
+        WebElement title=driver.findElement(By.xpath("//input[@id='id_gender1']"));
+        title.click();
+        WebElement password=driver.findElement(By.xpath("//input[@type='password']"));
+       driver.findElement(By.xpath("123456"));
+        WebElement daySelect=driver.findElement(By.xpath("//SELECT[@name='days']"));
+        WebElement months=driver.findElement(By.xpath("//select[@name='months']"));
+        WebElement years=daySelect.findElement(By.xpath("//select[@name='years']"));
+        WebElement checkBox =driver.findElement(By.xpath("//input[@id='newsletter']"));
+        checkBox.click();
+        WebElement receive=driver.findElement(By.xpath("//input[@name='optin']"));
+        receive.click();
+        driver.findElement(By.xpath("Address Information")).click();
+        Assert.assertEquals(expected,actual);
+        WebElement firsName=driver.findElement(By.name("//input[@id='first_name']"));
+        firsName.sendKeys();
+        WebElement lastName=driver.findElement(By.xpath("//input[@name='last_name']"));
+        lastName.sendKeys();
+        WebElement company=driver.findElement(By.xpath("//input[@name='company']"));
+        company.isDisplayed();
+        Assert.assertEquals(expected,actual);
 
-        //3. Password kutusuna “secret_sauce” yazdirin
-        WebElement password=driver.findElement(By.id("//input[@id='password']"));
-        password.click();
-        Assert.assertTrue(driver.getTitle().contains("test01"));
-
-        System.out.println("secret_sauce : " + password);
-        Assert.assertTrue(password.isSelected());
-
-        //4. Login tusuna basin
-        WebElement login=driver.findElement(By.xpath("//input[@id='login-button']"));
-        login.click();
-        //5. Ilk urunun ismini kaydedin ve bu urunun sayfasina gidin
-        WebElement standartUser=driver.findElement(By.id("//div[@id='login_credentials']"));
-        standartUser.click();
-
-        //6. Add to Cart butonuna basin
-        WebElement addToCard=driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']"));
-        addToCard.click();
-        //7. Alisveris sepetine tiklayin
-        WebElement alisVerisSepeti=driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
-        alisVerisSepeti.click();
-        //8. Sectiginiz urunun basarili olarak sepete eklendigini control edin
-       WebElement shoppingeGeriDönüş=driver.findElement(By.xpath("//button[@class='btn btn_secondary back btn_medium']"));
-       shoppingeGeriDönüş.click();
 
 
-        //9. Sayfayi kapatin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

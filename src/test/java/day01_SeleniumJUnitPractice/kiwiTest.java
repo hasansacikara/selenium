@@ -1,4 +1,4 @@
-package day02;
+package day01_SeleniumJUnitPractice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
